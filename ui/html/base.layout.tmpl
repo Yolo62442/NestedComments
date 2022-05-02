@@ -1,0 +1,23 @@
+{{define "base"}}
+    <!doctype html>
+    <html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}} - Comments</title>
+        <link rel='stylesheet' href='/static/css/main.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700'>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="/static/js/main.js"></script>
+    </head>
+    <body>
+    <header>
+        <h1>Comments</h1>
+    </header>
+    <section>
+        {{template "main" .}}
+    </section>
+        {{template "footer" .}}
+
+    </body>
+    </html>
+{{end}}

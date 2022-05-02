@@ -1,0 +1,32 @@
+{{template "base" .}}
+{{define "title"}}Home{{end}}
+{{define "main"}}
+    <form id="addComment"  method='POST' onsubmit="event.preventDefault();" >
+        <div>
+            <label>Author:</label>
+            <input type='text' name='author' class="author">
+        </div>
+        <div>
+            <label>Comment:</label>
+            <textarea name='comment' class="comment"></textarea>
+        </div>
+        <div >
+            <input type='hidden' name='id' value="-1">
+            <button class="btn_submit">Publish</button>
+        </div>
+    </form>
+    <h2>Comment section</h2>
+    {{if .Comments}}
+        <div id="comment-1">
+            <script>
+                var c = {{.Comments}}
+                var html = nested(-1, c)
+                console.log(html)
+                $('#comment-1').append(html)
+            </script>
+        </div>
+    {{else}}
+        <p>There's nothing to see here... yet!</p>
+
+    {{end}}
+{{end}}
